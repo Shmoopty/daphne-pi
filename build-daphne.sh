@@ -23,3 +23,16 @@ rm ./Makefile.vars
 ln -s ./Makefile.vars.linux_rpi2 ./Makefile.vars
 make
 
+# Copy daphne to runtime folder
+cp ./daphne.bin ./daphne/daphne
+
+# Success
+echo ""
+echo "Success!"
+echo ""
+echo "From the daphne subfolder, you should now be able to run:"
+echo " $ ./daphne lair noldp -nohwaccel"
+echo ""
+echo "(Keyboard 'Q' to quit)"
+echo ""
+
