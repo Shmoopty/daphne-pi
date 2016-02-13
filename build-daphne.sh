@@ -17,7 +17,6 @@ popd
 
 # Build Daphne
 pushd ./src/
-sudo apt-get install libvorbisidec1
 rm ./Makefile.vars
 ln -s ./Makefile.vars.linux_rpi2 ./Makefile.vars
 make
