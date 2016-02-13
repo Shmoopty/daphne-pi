@@ -1,0 +1,40 @@
+Daphne Changelog
+-------------------------
+
+v0.101.23
+- Fixed Cliff Hanger beeps so they work in all ROM revisions
+
+v0.101.22
+- Fixed VLDP problem where 32-bit overflow would occur if skipping was attempted after disc had been playing without a search for over 2 minutes.
+  (this problem was only evident in Astron Belt/Galaxy Ranger if the 'infinite' timer was enabled)
+
+v0.101.21
+- Fixed problem where left/right sound channels were reversed
+- Audio mixer changed so that audio is now mixed at full volume and checked for clipping
+
+v0.101.20
+- Removed 'instant strobes' option from Dragon's Lair driver, as this is incompatible with artificial seek delay.
+- Reworked the strobe handling in Dragon's Lair to be more efficient with CPU usage.
+- Improved VLDP error message about requiring a -framefile argument so it is only shown if the user didn't provide a -framefile argument.
+- Improved blocking seeking so that it will once again work with VLDP seek delay.
+- Fixed "-altaudio" option which has been broken since before v0.99.7 (!!)
+
+v0.101.19
+- Improved 'cobraconv' driver so that the game should be playable (although it still has many problems)
+- Added support for 'search abort' in the LDP1000 driver.  This fixed beginning of a new Bega's Battle game so that the "I am Bega" sequence will show even if the user has specified a lot of search delay.
+- Fixed PR-7820 driver so that it uses non-blocking seeking.
+
+v0.101.18
+- Fixed 'pause game' lockup bug that occurred when seek delay was enabled
+- Fixed 'continue countdown' in Bega's Battle so that it counts normally instead of too fast.
+- Fixed VIP9500SG Hitachi driver so that it works with non-blocking seeking.  This should improve Astron Belt, Galaxy Ranger, and Cobra Command (Astron Belt ROMS).
+
+v0.101.17
+- Fixed problem in Super Don Quixote where death scenes can be seen after each correct move.  Occasional death scenes may still be seen but these are due to bugs in the ROM and not bugs in the emulation.  As a result of this work, Esh's Aurunmilla also performs much better, although it may still not be as tight as Super Don.
+- Added ability to 'tilt' games. (Cliff Hanger is the only game that can currently be tilted).
+- Reworked OpenGL driver and fixed overrun problem that occasionally happened.
+- Added a formal changelog
+- Added preliminary SINGE support.  SINGE is a scripting language to allow users to make their own laserdisc-styled games.
+
+v0.101.16 and older
+- All changes are logged in CVS and a full changelog will be available for the next official release.

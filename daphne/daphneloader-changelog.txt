@@ -1,0 +1,155 @@
+DaphneLoader v2 Changelog
+-------------------------
+
+v2.1.45
+- Widened donate button, moved it up, and added a little color because people are still asking me how to donate.
+- Fixed bug in linux daphneloader script where spaces in paths weren't being handled properly.
+- Fixed bug in linux auto-updater script where spaces in paths weren't being handled properly.
+
+v2.1.44
+- Added more six more serial port choices to accommodate USB->Serial devices.
+- Added ability to disable auto-downloading.
+- Improved speed of 'check for update' process that occurs when DaphneLoader starts.
+- Improved linux URL handling.
+
+v2.1.43
+- Added four more statistics to the 'View Transfers' window: Leech Resistance, Upload Slots, Piece Selection Priority, and Max Peers.
+- Added Dragon's Lair 2 to the Digital Leisure torrent.
+- Added better 'fast resume' support for torrents with encrypted files.
+
+v2.1.42
+- Added simple automatic max upload speed detection to improve performance for those newbies who don't know their max upload speed.
+
+v2.1.41
+- Fixed Badlands (Standard) 2-lives and 3-lives options (they were swapped)
+- Fixed Badlands (Prototype) 4-lives, 5-lives, and 99-lives options (they weren't correct at all)
+- Fixed Bega's Battle 4-lives and 5-lives options
+- Fixed some MACH3 5-lives options
+- Fixed Thayer's Quest 3-lives and 2-lives options
+
+v2.1.40
+- Added the ability to specify an alternate audio filename suffix to be able to do things like play Esh's Aurunmilla with Japanese audio.
+- Added more auto-updating features to the linux and OSX builds.
+
+v2.1.39
+- Added changelog for Daphne (separate from DaphneLoader's changelog)
+- Fixed problem in mpolib where data would become corrupted if it wasn't sent all at once.
+- Added 'tilt' to keyboard remap controls
+
+v2.1.38
+- Added warning that a DVD will be required when auto-downloading Digital Leisure games
+- Added 'fastboot' option to Dragon's Lair Enhanced v1.1
+- Added ability to disable hint arrows in all versions of Super Don Quixote
+- Improved torrent CPU performance (probably only noticeable on slower machines)
+- Added support for older version of Dragon's Lair DVD-ROM
+
+v2.1.37
+- Added RoadBlaster cheat
+- Added 'custom command line' to the advanced game options
+- Fixed elusive torrent bug that would sometimes cause a disconnect immediately after a connect
+- Added connection logging for failed incoming torrent connections
+- Incoming torrent connections that don't do anything will now get disconnected sooner
+
+v2.1.36
+- Added ability to auto-download Space Ace and Thayer's Quest if a valid
+Digital Leisure DVD is present.
+
+v2.1.35
+- Fixed bug where DaphneLoader could crash if no torrents are active.
+- Updated Dragon's Lair torrent with a better .ogg file (for audio).
+
+v2.1.34
+- Added ability to auto-download Dragon's Lair if a valid Digital Leisure DVD
+is present.
+- Improved bit torrent library to distribute bandwidth evenly among multiple
+torrents.
+
+v2.1.33
+- Fixed 'browse framefile' button which was broken in v2.1.32
+- Added ability to have a message displayed inside the game options (for games with no dip switches)
+- Fixed Bega's Battle so that the ROM revision is selected as a game version instead of a dip switch
+
+v2.1.32
+- Did major work on game/laserdisc configuration UI so that each game is listed on the main menu only once
+- Fixed joystick button input remap bug
+- Managed torrents should be able to be restarted (ie resumed) in most cases now
+- File verification can now be done using bit torrent or md5 hashing (set in preferences)
+
+v2.1.31
+- Added input remapping
+
+v2.1.30
+- Changed firewall check so it only occurs if a torrent is active.
+
+v2.1.29
+- Added volume adjustment options
+- Added cheats for CobraAB and CobraM3
+- Fixed problem where paused managed torrents were auto-started when daphneloader is run
+- Removed requirement to start a managed torrent if you already have all required files
+- Added better support for wxWidgets if it is built in UNICODE mode
+- Added home directory support
+- Added ability to load command-line arguments from a DaphneLoaderCmds.txt file
+- Torrent client identification improved (uTorrent and mac OSX are properly identified).
+- Added a check when parsing the configuration XML to make sure arguments are in proper format.
+
+v2.1.28
+- Added GPWorld to game list
+- Managed torrents are now automatically updated
+
+v2.1.27
+- Fixed problem with config.xml where Badlands 'SHOOT!' message would never display (thanks Rockford)
+
+v2.1.26
+- Fixed problem in config.xml where Cobra Command (Dedicated) random scenes
+could not be enabled
+- Added more fast-resume options for torrent
+
+v2.1.25
+- Fixed problem with SAE lives-per-credit dip switch setting
+- Added 'fastboot' options to Dragon's Lair, Space Ace, and Cliff Hanger
+- Added ability to view daphne_log.txt file from DaphneLoader
+
+v2.1.24
+- Added 'reversed' screen resolutions such as 480x640 and 768x1024 (for pre-rotated screens)
+
+v2.1.23
+- Reworked OpenGL and Rotation options so they are hopefully more clear
+
+v2.1.22
+- Added OpenGL and Rotation options to the Video tab
+
+v2.1.21
+- Added 'donate' button
+- Fixed 'start' and 'config' buttons so the space around them is more
+balanced
+
+v2.1.20
+- Fixed problem where real laserdisc player and baud rate indices were not
+being initialized
+- Fixed problem with 'Completed Files' dialog not displaying correctly on
+Windows
+- Fixed bug introduced in v2.1.19 where list of real laserdisc players had an
+extra entry at the beginning that didn't belong there
+
+v2.1.19
+- Finished updating Laserdisc tab in Config section so it uses the same
+dropdown list convention as the rest of the config UI (with a * indicating
+the recommended choice)
+- Added support for real laserdisc players
+- Added ability to see the completed files of other peers, in addition to
+one's own completed files
+
+v2.1.18
+- Added this changelog, with the ability to view it from DaphneLoader
+- Added ability to go to web site and documentation via Help menu
+- Reworded 'incoming connection' warning so it is shorter (with the hope that
+more people will read it)
+- Added a button to the 'Transfer Progress' dialog that explains why a user
+may be getting slow download speeds.
+- Fixed bug in config.xml where pay-as-you-go dip switches for Dragon's Lair
+rev f2 were incorrect
+
+v2.1.17
+- DaphneLoader now minimizes to the systray
+- Multiple instances of DaphneLoader should now be prevented.  That is, you
+should only be able to run DaphneLoader once
