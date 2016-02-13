@@ -4,7 +4,7 @@
 
 # Get dependencies
 sudo apt-get update
-sudo apt-get -y install libvorbisidec1 libglew1.10 libvorbis-dev libglew-dev
+sudo apt-get -y install libvorbis-dev libglew-dev
 
 # Optional: clean intermediate files
 #find . -name "*.[od]" -delete
