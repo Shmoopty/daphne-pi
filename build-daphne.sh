@@ -4,11 +4,10 @@
 
 # Get dependencies
 sudo apt-get update
-sudo apt-get install libvorbisidec1
-sudo apt-get install libglew1.10
+sudo apt-get -y install libvorbisidec1 libglew1.10
 
 # Optional: clean intermediate files
-find . -name "*.[od]" -delete
+#find . -name "*.[od]" -delete
 
 # Build vldp2 lib
 pushd ./src/vldp2/
@@ -22,6 +21,7 @@ sudo apt-get install libvorbisidec1
 rm ./Makefile.vars
 ln -s ./Makefile.vars.linux_rpi2 ./Makefile.vars
 make
+popd
 
 # Copy daphne to runtime folder
 cp ./daphne.bin ./daphne/daphne
