@@ -22,7 +22,7 @@ export STATIC_VLDP = 1
 
 # platform-specific compile flags
 PFLAGS = ${DFLAGS} `sdl-config --cflags` -DUNIX -DLINUX -DNATIVE_CPU_ARM \
-	-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DUSE_OPENGL
+	-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DUSE_OPENGL -DRPI
 
 # platform-specific lib flags
 LIBS = `sdl-config --libs` -ldl -lz -logg -lvorbis -lvorbisfile -lGLEW -lGL
