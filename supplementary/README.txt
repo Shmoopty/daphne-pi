@@ -10,9 +10,17 @@ Alternate game roms may be added without duplicate storage by
 symlinking the files in one folder to another.
 
 
+# ADDING COMMAND-LINE PARAMETERS TO A SPECIFIC GAME
+
+You may optionally add a text file {game}.daphne/{game}.commands to add
+additional command-line parameters such as -fastboot to that game.
+
+
+
 # ADDING ROMS
 
 All actual roms should be added to the daphne/roms subfolder here.
+
 
 
 # MAPPING JOYSTICK BUTTONS
