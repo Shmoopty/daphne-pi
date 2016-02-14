@@ -18,6 +18,9 @@ else
   exit 1
 fi
 
+# Remove stale binary
+rm -f ./daphne/daphne
+
 # Get dependencies
 sudo apt-get update
 if [ $? -ne 0 ]; then echo "apt-get update was not successful"; exit 1; fi
@@ -52,7 +55,7 @@ make
 popd
 
 # Copy daphne to runtime folder
-cp -f ./daphne.bin ./daphne/daphne
+mv -f ./daphne.bin ./daphne/daphne
 if [ $? -ne 0 ]; then echo "daphne.bin was not found"; exit 1; fi
 
 # Success

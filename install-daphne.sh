@@ -7,6 +7,12 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+# Verify build
+if [ ! -f daphne/daphne ]; then
+  echo "Daphne has not been fully built!  Run ./build-daphne.sh"
+  exit 1
+fi
+
 # Install runtime
 
 cp -rf ./daphne /opt/retropie/emulators/
