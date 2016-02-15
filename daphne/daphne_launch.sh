@@ -13,4 +13,4 @@ else
   CMD_LINE_EXTRAS=""
 fi
 
-/opt/retropie/emulators/daphne/daphne "$NAME" vldp -nohwaccel -framefile "$FULL_PATH/$NAME.txt" -homedir /home/pi/RetroPie/roms/daphne -fullscreen "$CMD_LINE_EXTRAS"
+/opt/retropie/emulators/daphne/daphne "$NAME" vldp -nohwaccel -framefile "$FULL_PATH/$NAME.txt" -homedir /home/pi/RetroPie/roms/daphne -fullscreen $CMD_LINE_EXTRAS
