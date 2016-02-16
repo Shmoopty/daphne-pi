@@ -15,18 +15,26 @@ then
   echo "This hardware resembles a Raspberry Pi 2"
 else
   echo "This hardware is unfamiliar!  Not arm6 or arm7."
-  exit 1
+#  exit 1
 fi
 
 # Remove stale binary
 rm -f ./daphne/daphne
 
-# Get dependencies
-sudo apt-get update
-if [ $? -ne 0 ]; then echo "apt-get update was not successful"; exit 1; fi
+# Check if dependencies are installed
+LIBVORBIS_DEV_INSTALLED=$(dpkg-query -W --showformat='${Status}\n' libvorbis-dev|grep "install ok installed")
+LIBGLEW_DEV_INSTALLED=$(dpkg-query -W --showformat='${Status}\n' libglew-dev|grep "install ok installed")
 
-sudo apt-get -y install libvorbis-dev libglew-dev
-if [ $? -ne 0 ]; then echo "installing dependencies was not successful"; exit 1; fi
+# Install deps if missing
+if [ "" == "$LIBVORBIS_DEV_INSTALLED" -o "" == "$LIBGLEW_DEV_INSTALLED" ]; then
+# Get dependencies
+  sudo apt-get update
+  if [ $? -ne 0 ]; then echo "apt-get update was not successful"; exit 1; fi
+
+  sudo apt-get -y install libvorbis-dev libglew-dev
+  if [ $? -ne 0 ]; then echo "installing dependencies was not successful"; exit 1; fi
+
+fi
 
 # Optional: clean intermediate files
 #find . -name "*.[od]" -delete
