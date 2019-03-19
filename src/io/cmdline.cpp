@@ -677,6 +677,18 @@ bool parse_cmd_line(int argc, char **argv)
 			change_dir(s);
 		}
 
+		//joynum defines the joystick number -joynum 0 means /dev/input/js0  -joynum 1 means /dev/input/js1
+		//the default is /dev/input/js0
+		else if (strcasecmp(s, "-joynum")==0)
+		{
+			get_next_word(s, sizeof(s));
+
+			int joynum = atoi(s);
+			set_joy_num(joynum);
+			sprintf(s, "Using joystick %d", joynum);
+			printline(s);
+		}
+
 		// if user wants laserdisc player to blank video while searching (VLDP only)
 		else if (strcasecmp(s, "-blank_searches")==0)
 		{

@@ -55,6 +55,7 @@ bool g_use_joystick = true;	// use a joystick by default
 bool g_consoledown = false;			// whether the console is down or not
 bool g_alt_pressed = false;	// whether the ALT key is presssed (for ALT-Enter combo)
 unsigned int idle_timer; // added by JFA for -idleexit
+int g_joy_num = 0;
 
 const double STICKY_COIN_SECONDS = 0.125;	// how many seconds a coin acceptor is forced to be "depressed" and how many seconds it is forced to be "released"
 Uint32 g_sticky_coin_cycles = 0;	// STICKY_COIN_SECONDS * get_cpu_hz(0), cannot be calculated statically
@@ -282,10 +283,14 @@ int SDL_input_init()
 			// if there is at least 1 joystick and we are authorized to use the joystick for input
 			if (SDL_NumJoysticks() > 0)
 			{
-				G_joystick = SDL_JoystickOpen(0);	// FIXME: right now we automatically choose the first joystick
+				char str[40];
+				sprintf(str, "NumSticks %d", SDL_NumJoysticks());
+				printline(str);
+				G_joystick = SDL_JoystickOpen(g_joy_num);
 				if (G_joystick != NULL)
 				{
-					printline("Joystick #0 was successfully opened");
+					sprintf(str, "Joystick  %d was successfully opened", g_joy_num);
+					printline(str);
 				}
 				else
 				{
@@ -852,4 +857,8 @@ void reset_idle(void)
 void set_use_joystick(bool val)
 {
 	g_use_joystick = val;
+}
+
+void set_joy_num(int num) {
+	g_joy_num = num;
 }
